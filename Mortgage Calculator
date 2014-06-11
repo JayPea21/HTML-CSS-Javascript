@@ -2,7 +2,8 @@
 <html>
 <head>
   <style TYPE="text/css">
-  <!--
+
+<!--
 body {
 	background: #7ea2ae;
 	text-align: center;
@@ -51,7 +52,7 @@ span {
 	margin: auto;
 	text-align: center;
 }
-input[type=radio] {  
+input[type="radio"] {  
     display: none;  
 } 
 input[type="radio"] + label
@@ -67,21 +68,36 @@ input[type="radio"]:checked + label
     background: url(images/circle-checked.jpg) no-repeat;;
     height: 31px;
     width: 33px;
-    display:inline-block;
+    display: inline-block;
     padding: 9 0 0 0px;
 }
 #calc {
 	border:0;
-	height:30px;
+	height:38px;
 	width:150px;
 	background:#a8000d;
-	color:#ffffff
+	color: #ffffff;
+	font: bold 20px/40px "Trebuchet MS", Helvetica, sans-serif;
 }
 #interest {
-	width:20px;
+	width:25px;
 	border:0;
 	border-bottom:1px;
 	font: bold 20px/40px "Trebuchet MS", Helvetica, sans-serif;
+}
+input[type=range] {
+    -webkit-appearance: none;
+    background-color: silver;
+    width: 200px;
+    height: 10px;
+}
+input[type="range"]::-webkit-slider-thumb  {
+    -webkit-appearance: none;
+	background-color: #b6c7ca;
+    /*background: url(images/slider.jpg) no-repeat;;*/
+    opacity: 0.75;
+    width: 15px;
+    height: 20px;
 }
   --></style>
 <script language="javascript" type="text/javascript">
@@ -154,7 +170,7 @@ function verify() {
 		<input type="range" min="1" max="100" value="15" onchange="showDownPay(this.value)" />
 		<br/>
 	</div>
-	
+
 	<div id="left">
 		<h2>MORTGAGE TERM</h2>
 		<br/>
@@ -168,9 +184,7 @@ function verify() {
 	<div id="left">
 		<h2>INTEREST RATE</h2>
 		<div style="background: white;">
-			<form>
-				<input id="interest" type="text" onchange="verify()"><span style="color:black;">%</span>
-			</form>			
+			<input id="interest" type="text" onchange="verify()"><span style="color:black;">%</span>	
 		</div>
 		<br/><br/><br/>
 	</div>		
@@ -178,9 +192,7 @@ function verify() {
 
 <div id="wrapper">
 	<br/><br/>
-	<form>
 		<input id="calc" type="button" disabled="true" value="CALCULATE" onclick="calculate()" >
-	</form>
 	<br/><br/>
 </div>
 
