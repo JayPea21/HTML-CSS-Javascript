@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style TYPE="text/css">
+  <!--
+body {
+	background: #7ea2ae;
+	text-align: center;
+}
+h2 {
+	color: white;
+	font: bold Helvetica, Sans-Serif;
+}
+#container {
+	margin-left: 15%;
+	padding: 0;
+	width: 1090;
+	text-align: center;
+}
+#left {
+	min-width: 250px;
+	background: #6c929d;
+	padding: 10px;
+	margin: 10px 10px 10px 10px;
+	display: inline;
+	float: left;
+	position: relative;
+	text-align: center;
+}
+span { 
+   color: #e0e0e0; 
+   font: bold 20px/40px Helvetica, Sans-Serif; 
+   letter-spacing: -1px;  
+   padding: 2px; 
+}
+#wrapper {
+	clear: both;
+	/*min-width: 1110px;*/
+	width: 40%;
+	margin: auto;
+	text-align: center;
+}
+#wrapper1 {
+	border:1px solid;
+	position:relative;
+	left: 40%;
+	clear: both;
+	/*min-width: 1110px;*/
+	width: 40%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+.text {
+	color: white;
+	font: bold Helvetica, Sans-Serif;
+}
+  --></style>
+<script language="javascript" type="text/javascript">
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+function showPurchase(newValue) {
+	var pp = newValue
+	document.getElementById("range").innerHTML = "$"+numberWithCommas(pp);
+	var dp = parseInt((document.getElementById("range2").innerHTML).toString().replace(/[^a-zA-Z 0-9]+/g,''),10);	//change dpv (range3) when pp changes
+	document.getElementById("range3").innerHTML = "$"+numberWithCommas(((parseInt(dp,10)/100)*pp).toFixed(0));
+}
+function showDownPay(newValue) {
+	var pp;
+	var dp = newValue;
+	pp = parseInt((document.getElementById("range").innerHTML).toString().replace(/[^a-zA-Z 0-9]+/g,''),10);	//remove all special chars
+	document.getElementById("range2").innerHTML = dp+" %";
+	document.getElementById("range3").innerHTML = "$"+numberWithCommas(((parseInt(dp,10)/100)*pp).toFixed(0));
+}
+function calculate() {
+	var mt;
+	if (document.getElementById('m1').checked) {
+		mt = parseInt(document.getElementById('m1').value,10);
+	} else if(document.getElementById('m2').checked) {
+		mt = parseInt(document.getElementById('m2').value,10);
+	}
+	var pp = parseInt((document.getElementById("range").innerHTML).toString().replace(/[^a-zA-Z 0-9]+/g,''),10);
+	var dpv = parseInt((document.getElementById("range3").innerHTML).toString().replace(/[^a-zA-Z 0-9]+/g,''),10);
+	var ir = parseFloat(document.getElementById("interest").value,10);
+	//document.getElementById("range4").innerHTML = mt;
+	//document.getElementById("range4").innerHTML = numberWithCommas((pp-dpv)*ir);
+	document.getElementById("range4").innerHTML = "$"+numberWithCommas((((pp-dpv)+((pp-dpv)*ir))/(mt*12)).toFixed(2));
+}
+function verify() {
+	if(document.getElementById("interest").value.trim() != "") {
+		document.getElementById("calc").disabled = false;
+	} else {
+		document.getElementById("calc").disabled = true;
+	}
+} 
+</script>
+</head>
+
+<body>
+
+<div id="wrapper">
+	<h2>MORTGAGE CALCULATOR</h2>
+	<h2>____________________________</h2>
+	<div id="left">
+		<h2>PURCHASE PRICE</h2>
+		<div style="background: white;">
+			<span id="range">$30,000</span>
+		</div>
+		<br/>
+		<input type="range" min="30000" max="2000000" step="100" value="0" onchange="showPurchase(this.value)" />
+		<br/>
+	</div>
+
+	<div id="left">
+		<h2>DOWNPAYMENT</h2>
+		<div>
+			<div style="background: white;width: 129px;float:left;">
+				<span id="range3">0</span>
+			</div>
+			<div style="background: white;width: 100px;float:right;">
+				<span id="range2">15 %</span>
+			</div>
+		</div>
+		<br/><br/><br/>
+		<input type="range" min="1" max="100" value="15" onchange="showDownPay(this.value)" />
+		<br/>
+	</div>
+	
+	<div id="left">
+		<h2>MORTGAGE TERM</h2>
+		<br/>
+		<form id="radios">
+			<input type="radio" checked="checked" id="m1" name="mortgage" value="30">30 yr
+			<input type="radio" id="m2" name="mortgage" value="15">15 yr
+			<br/><br/><br/>
+		</form>
+	</div>
+
+	<div id="left">
+		<h2>INTEREST RATE</h2>
+		<div style="background: white;">
+			<form>
+				<input id="interest" type="text" onchange="verify()">
+			</form>			
+		</div>
+		<br/><br/><br/>
+	</div>		
+</div>
+
+<div id="wrapper">
+	<form>
+	<input border=0 id="calc" type="button" value="CALCULATE" onclick="calculate()">
+	</form>
+</div>
+
+<div id="wrapper">
+	<span id="range4">0</span>
+</div>
+
+</body>
+</html>
