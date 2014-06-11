@@ -9,7 +9,7 @@ body {
 }
 h2 {
 	color: white;
-	font: bold "Trebuchet MS", Helvetica, sans-serif;
+	font: bold 20px/40px "Trebuchet MS", Helvetica, sans-serif;
 }
 #container {
 	margin-left: 15%;
@@ -128,8 +128,8 @@ function verify() {
 <body>
 
 <div id="wrapper">
-	<h2>MORTGAGE CALCULATOR</h2>
-	<h2>____________________________</h2>
+	<h2>MORTGAGE CALCULATOR
+	<br/>____________________________</h2>
 	<div id="left">
 		<h2>PURCHASE PRICE</h2>
 		<div style="background: white;">
