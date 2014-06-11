@@ -9,13 +9,13 @@ body {
 }
 h2 {
 	color: white;
-	font: bold Helvetica, Sans-Serif;
+	font: bold "Trebuchet MS", Helvetica, sans-serif;
 }
 #container {
 	margin-left: 15%;
 	padding: 0;
 	width: 1090;
-	text-align: center;				/* red for button #a8000d */
+	text-align: center;
 }
 #left {
 	min-width: 300px;
@@ -28,9 +28,19 @@ h2 {
 	position: relative;
 	text-align: center;
 }
+#bot {
+	min-width: 610px;
+	background: #6c929d;
+	padding: 30px;
+	margin: 10px 10px 10px 10px;
+	display: inline;
+	float: left;
+	position: relative;
+	text-align: left;
+}
 span { 
    color: #e0e0e0; 
-   font: bold 20px/40px Helvetica, Sans-Serif; 
+   font: bold 20px/40px "Trebuchet MS", Helvetica, sans-serif; 
    letter-spacing: -1px;  
    padding: 2px; 
 }
@@ -50,7 +60,7 @@ input[type="radio"] + label
     height: 31px;
     width: 33px;
     display:inline-block;
-    padding: 0 0 0 0px;
+    padding: 9 0 0 0px;
 }
 input[type="radio"]:checked + label
 {
@@ -58,7 +68,20 @@ input[type="radio"]:checked + label
     height: 31px;
     width: 33px;
     display:inline-block;
-    padding: 0 0 0 0px;
+    padding: 9 0 0 0px;
+}
+#calc {
+	border:0;
+	height:30px;
+	width:150px;
+	background:#a8000d;
+	color:#ffffff
+}
+#interest {
+	width:20px;
+	border:0;
+	border-bottom:1px;
+	font: bold 20px/40px "Trebuchet MS", Helvetica, sans-serif;
 }
   --></style>
 <script language="javascript" type="text/javascript">
@@ -90,7 +113,7 @@ function calculate() {
 	var ir = parseFloat(document.getElementById("interest").value,10);
 	//document.getElementById("range4").innerHTML = mt;
 	//document.getElementById("range4").innerHTML = numberWithCommas((pp-dpv)*ir);
-	document.getElementById("range4").innerHTML = "$"+numberWithCommas((((pp-dpv)+((pp-dpv)*ir))/(mt*12)).toFixed(2));
+	document.getElementById("range4").innerHTML = "$"+numberWithCommas((((pp-dpv)+((pp-dpv)*(ir/100)))/(mt*12)).toFixed(2));
 }
 function verify() {
 	if(document.getElementById("interest").value.trim() != "") {
@@ -136,8 +159,8 @@ function verify() {
 		<h2>MORTGAGE TERM</h2>
 		<br/>
 		<form id="radios">
-			<input type="radio" class="styled" checked="checked" id="m1" name="mortgage" value="30"><label for="m1"></label><b>30 yr</b>
-			<input type="radio" class="styled" id="m2" name="mortgage" value="15"><label for="m2"></label><b>15 yr</b>
+			<input type="radio" class="styled" checked="checked" id="m1" name="mortgage" value="30"><label for="m1"></label><span style="color:white;">30 yr</span>
+			<input type="radio" class="styled" id="m2" name="mortgage" value="15"><label for="m2"></label><span style="color:white;">15 yr</span>
 			<br/><br/><br/>
 		</form>
 	</div>
@@ -146,7 +169,7 @@ function verify() {
 		<h2>INTEREST RATE</h2>
 		<div style="background: white;">
 			<form>
-				<input id="interest" type="text" onchange="verify()" style="width:30px;">
+				<input id="interest" type="text" onchange="verify()"><span style="color:black;">%</span>
 			</form>			
 		</div>
 		<br/><br/><br/>
@@ -154,13 +177,19 @@ function verify() {
 </div>
 
 <div id="wrapper">
+	<br/><br/>
 	<form>
-	<input border=0 id="calc" type="button" disabled="true" value="CALCULATE" onclick="calculate()" style="height:30px;width:150px;background:#a8000d;color:#ffffff">
+		<input id="calc" type="button" disabled="true" value="CALCULATE" onclick="calculate()" >
 	</form>
+	<br/><br/>
 </div>
 
 <div id="wrapper">
-	<span id="range4">0</span>
+	<div id="bot">
+		<span style="color:white;">Estimated Monthly Payment:</span>
+		<br/>
+		<span id="range4" style="color:white;">$0</span>
+	</div>
 </div>
 
 </body>
