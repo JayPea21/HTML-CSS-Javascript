@@ -198,6 +198,16 @@ function showDownPay(newValue) {
 	document.getElementById("range2").value = dp;
 	document.getElementById("range3").value = ((parseInt(dp,10)/100)*pp).toFixed(0);	//no decimals
 }
+function changedDP(newValue) {
+	var dp = newValue;
+	var pp = document.getElementById("range").value;
+	document.getElementById("range3").value = ((parseInt(dp,10)/100)*pp).toFixed(0);	//no decimals
+}
+function changedDPV(newValue) {
+	var dpv = newValue;
+	var pp = document.getElementById("range").value;
+	document.getElementById("range2").value = ((dpv/pp)*100).toFixed(0)
+}
 function calculate() {
 	var mt;
 	if (document.getElementById('m1').checked) {
@@ -209,7 +219,7 @@ function calculate() {
 	//var dpv = parseInt((document.getElementById("range3").innerHTML).toString().replace(/[^a-zA-Z 0-9]+/g,''),10);
 	//var ir = parseFloat(document.getElementById("interest").value,10);
 	//document.getElementById("range4").innerHTML = "$"+numberWithCommas((((pp-dpv)+((pp-dpv)*(ir/100)))/(mt*12)).toFixed(2));
-	var pp = document.getElementById("range").value
+	var pp = document.getElementById("range").value;
 	var dpv = document.getElementById("range3").value;
 	var ir = parseFloat(document.getElementById("interest").value,10);
 	document.getElementById("range4").innerHTML = "$"+numberWithCommas((((pp-dpv)+((pp-dpv)*(ir/100)))/(mt*12)).toFixed(2));
@@ -234,27 +244,23 @@ function verify() {
 		<div style="background: white;">
 			<!--<span id="range">$30,000</span>-->
 			<span>$</span><input width="60px" id="range" type="number" value="30000">
-		</div>
-		<br/>
+		</div><br>
 		<input type="range" min="30000" max="2000000" step="100" value="0" onchange="showPurchase(this.value)" />
-		<br/>
 	</div>
 
 	<div id="left">
 		<h2>DOWNPAYMENT</h2>
 		<div>
-			<div style="background: white;width: 129px;float:left;">
-				<!--<span id="range3">$4,500</span>-->
-				<span>$</span><input id="range3" type="number" value="4500">
-			</div>
-			<div style="background: white;width: 100px;float:right;">
+			<div style="background: white;width: 100px;float:left;">
 				<!--<span id="range2">15 %</span>-->
-				<input id="range2" type="number" value="15"><span>%</span>
+				<input id="range2" type="number" value="15" onchange="changedDP(this.value)"><span>%</span>
 			</div>
-		</div>
-		<br/><br/><br/>
+			<div style="background: white;width: 129px;float:right;">
+				<!--<span id="range3">$4,500</span>-->
+				<span>$</span><input id="range3" type="number" value="4500" onchange="changedDPV(this.value)">
+			</div>
+		</div><br><br><br>
 		<input type="range" min="1" max="100" value="15" onchange="showDownPay(this.value)" />
-		<br/>
 	</div>
 
 	<div id="left">
