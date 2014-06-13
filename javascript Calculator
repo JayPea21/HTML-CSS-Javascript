@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,12 +6,16 @@
 
 <!--
 body {
-	background: #7ea2ae;
-	text-align: center;
+	background: transparent;
+	text-align: left;
+	margin:0;
+	padding: 0;
 }
 h2 {
 	color: white;
 	font: bold 20px/40px "Trebuchet MS", Helvetica, sans-serif;
+	margin-top: 0;
+	margin-bottom: 0px;
 }
 #container {
 	margin-left: 15%;
@@ -19,11 +24,11 @@ h2 {
 	text-align: center;
 }
 #left {
-	min-width: 300px;
-	height: 150px;
-	background: #6c929d;
-	padding: 10px;
-	margin: 10px 10px 10px 10px;
+	min-width: 270px;
+	height: 110px;
+	background-color: #313c4c;
+	padding: 10px 25px 25px 25px;
+	margin: 0px 15px 15px 0;
 	display: inline;
 	float: left;
 	position: relative;
@@ -31,13 +36,15 @@ h2 {
 }
 #bot {
 	min-width: 610px;
-	background: #6c929d;
-	padding: 30px;
-	margin: 10px 10px 10px 10px;
+	background: #cd252e;
+	padding: 0px;
+	margin: 0px;
 	display: inline;
 	float: left;
 	position: relative;
 	text-align: left;
+	width:655px;
+	height: 45px;
 }
 span { 
    color: #e0e0e0; 
@@ -57,51 +64,56 @@ input[type="radio"] {
 } 
 input[type="radio"] + label
 {
-    background: url(images/circle.jpg) no-repeat;;
+	background-position: left center;
+    background: url(img/circle.png) no-repeat;
     height: 31px;
     width: 33px;
     display:inline-block;
-    padding: 9 0 0 0px;
+    padding: 0 0 0 0px;
 }
 input[type="radio"]:checked + label
 {
-    background: url(images/circle-checked.jpg) no-repeat;;
+    background: url(img/circlefill.png) no-repeat;
+    background-position: left bottom;
     height: 31px;
     width: 33px;
     display: inline-block;
-    padding: 9 0 0 0px;
+    padding: 0 0 0 0px;
+    
 }
 #calc {
 	border:0;
 	height:38px;
-	width:150px;
+	width:300px;
 	background:#a8000d;
 	color: #ffffff;
 	font: bold 20px/40px "Trebuchet MS", Helvetica, sans-serif;
 }
 #range {
 	text-align:center;
-	color: #e0e0e0;
-	width:110px;
+	color: #282828;
+	width:260px;
 	border:0;
 	font: bold 20px/40px "Trebuchet MS", Helvetica, sans-serif;
 }
 #range2 {
 	text-align:center;
-	color: #e0e0e0;
+	color: #282828;
 	width:50px;
 	border:0;
 	font: bold 20px/40px "Trebuchet MS", Helvetica, sans-serif;
 }
 #range3 {
 	text-align:center;
-	color: #e0e0e0;
-	width:110px;
+	color: #282828;
+	width:150px;
 	border:0;
 	font: bold 20px/40px "Trebuchet MS", Helvetica, sans-serif;
 }
 #interest {
-	width:25px;
+	color: #282828;
+	text-align:center;
+	width:70px;
 	border:0;
 	font: bold 20px/40px "Trebuchet MS", Helvetica, sans-serif;
 }
@@ -114,11 +126,11 @@ input[type="range"] {
   -webkit-appearance: none;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   width: 100%;
-  height: 20px;
-  margin: 0;
+  height: 10px;
+  margin: 10px 0 0 0;
   border: none;
-  padding: 1px 2px;
-  border-radius: 14px;
+  padding: 0px;
+  border-radius: 0px;
   background: #93b1ba;
   box-shadow: inset 0 0 0 0 #0d0e0f, inset 0 0 0 0 #3a3d42;
   -webkit-box-shadow: inset 0 0 0 0 #0d0e0f, inset 0 0 0 0 #3a3d42;
@@ -143,27 +155,27 @@ input[type="range"]::-ms-tooltip {
 		/* thumb */
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  width: 40px;
+  width: 18px;
   height: 18px;
   border: none;
   border-radius: 12px;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #b6c7ca), color-stop(100%, #245e8f)); /* android <= 2.2 */
-  background-image: -webkit-linear-gradient(top , #b6c7ca 0, #245e8f 100%); /* older mobile safari and android > 2.2 */;
-  background-image: linear-gradient(to bottom, #b6c7ca 0, #245e8f 100%); /* W3C */
+  background-image: -webkit-linear-gradient(top , #ffffff 100%, #ffffff 100%); /* older mobile safari and android > 2.2 */;
+  background-image: linear-gradient(to bottom, #ffffff 100%, #ffffff 100%); /* W3C */
 }
 input[type="range"]::-moz-range-thumb {
-  width: 40px;
+  width: 18px;
   height: 18px;
   border: none;
   border-radius: 12px;
-  background-image: linear-gradient(to bottom, #b6c7ca 0, #245e8f 100%); /* W3C */
+  background-image: linear-gradient(to bottom, #ffffff 100%, #ffffff 100%); /* W3C */
 }
 input[type="range"]::-ms-thumb {
-  width: 40px;
+  width: 18px;
   height: 18px;
   border-radius: 12px;
   border: 0;
-  background-image: linear-gradient(to bottom, #b6c7ca 0, #245e8f 100%); /* W3C */
+  background-image: linear-gradient(to bottom, #ffffff 100%, #ffffff 100%); /* W3C */
 }
 input[type='number'] {
     -moz-appearance:textfield;	/*for firefox*/
@@ -181,32 +193,44 @@ function numberWithCommas(x) {
 }
 function showPurchase(newValue) {
 	var pp = newValue
-	//document.getElementById("range").value = numberWithCommas(pp);
-	//var dp = parseInt((document.getElementById("range2").innerHTML).toString().replace(/[^a-zA-Z 0-9]+/g,''),10);	//change dpv (range3) when pp changes
-	//document.getElementById("range3").innerHTML = "$"+numberWithCommas(((parseInt(dp,10)/100)*pp).toFixed(0));
-	document.getElementById("range").value = pp;
+	document.getElementById("range").value = "$"+numberWithCommas(pp);
 	var dp = document.getElementById("range2").value;
-	document.getElementById("range3").value = ((parseInt(dp,10)/100)*pp).toFixed(0);	//no decimals
+	document.getElementById("range3").value = "$"+numberWithCommas(((parseInt(dp,10)/100)*pp).toFixed(0));	//no decimals
+	verify();
 }
 function showDownPay(newValue) {
 	var pp;
 	var dp = newValue;
-	//pp = parseInt((document.getElementById("range").innerHTML).toString().replace(/[^a-zA-Z 0-9]+/g,''),10);	//remove all special chars
-	//document.getElementById("range2").innerHTML = dp+" %";
-	//document.getElementById("range3").innerHTML = "$"+numberWithCommas(((parseInt(dp,10)/100)*pp).toFixed(0));
-	pp = document.getElementById("range").value
+	pp = parseInt((document.getElementById("range").value).toString().replace(/[^a-zA-Z 0-9]+/g,''),10);	//remove all special chars
 	document.getElementById("range2").value = dp;
-	document.getElementById("range3").value = ((parseInt(dp,10)/100)*pp).toFixed(0);	//no decimals
+	document.getElementById("range3").value = "$"+numberWithCommas(((parseInt(dp,10)/100)*pp).toFixed(0));
+	document.getElementById("range").value = "$"+numberWithCommas(pp);
+	verify();
+}
+function changedPP(newValue) {
+	var pp = parseInt(newValue.toString().replace(/[^a-zA-Z 0-9]+/g,''),10);
+	document.getElementById("range").value = "$"+numberWithCommas(pp);
+	var dp = document.getElementById("range2").value;
+	document.getElementById("range3").value = "$"+numberWithCommas(((parseInt(dp,10)/100)*pp).toFixed(0));	//no decimals
+	verify();
 }
 function changedDP(newValue) {
 	var dp = newValue;
-	var pp = document.getElementById("range").value;
-	document.getElementById("range3").value = ((parseInt(dp,10)/100)*pp).toFixed(0);	//no decimals
+	var pp = parseInt((document.getElementById("range").value).toString().replace(/[^a-zA-Z 0-9]+/g,''),10);
+	document.getElementById("range3").value = "$"+numberWithCommas(((parseInt(dp,10)/100)*pp).toFixed(0));
+	verify();
 }
 function changedDPV(newValue) {
-	var dpv = newValue;
-	var pp = document.getElementById("range").value;
-	document.getElementById("range2").value = ((dpv/pp)*100).toFixed(0)
+	var dpv = parseInt(newValue.toString().replace(/[^a-zA-Z 0-9]+/g,''),10);
+	var pp = parseInt((document.getElementById("range").value).toString().replace(/[^a-zA-Z 0-9]+/g,''),10);
+	document.getElementById("range2").value = "$"+numberWithCommas(((dpv/pp)*100).toFixed(0));
+	document.getElementById("range3").value = "$"+numberWithCommas(dpv);
+	verify();
+}
+function changedIR(newValue) {
+	var ir = newValue;
+	document.getElementById("interest").value = ir;
+	verify();
 }
 function calculate() {
 	var mt;
@@ -215,20 +239,37 @@ function calculate() {
 	} else if(document.getElementById('m2').checked) {
 		mt = parseInt(document.getElementById('m2').value,10);
 	}
-	//var pp = parseInt((document.getElementById("range").innerHTML).toString().replace(/[^a-zA-Z 0-9]+/g,''),10);
-	//var dpv = parseInt((document.getElementById("range3").innerHTML).toString().replace(/[^a-zA-Z 0-9]+/g,''),10);
-	//var ir = parseFloat(document.getElementById("interest").value,10);
-	//document.getElementById("range4").innerHTML = "$"+numberWithCommas((((pp-dpv)+((pp-dpv)*(ir/100)))/(mt*12)).toFixed(2));
-	var pp = document.getElementById("range").value;
-	var dpv = document.getElementById("range3").value;
+	var pp = parseInt((document.getElementById("range").value).toString().replace(/[^a-zA-Z 0-9]+/g,''),10);
+	var dpv = parseInt((document.getElementById("range3").value).toString().replace(/[^a-zA-Z 0-9]+/g,''),10);
 	var ir = parseFloat(document.getElementById("interest").value,10);
-	document.getElementById("range4").innerHTML = "$"+numberWithCommas((((pp-dpv)+((pp-dpv)*(ir/100)))/(mt*12)).toFixed(2));
+}
+function show() {
+	var mt;
+	if (document.getElementById('m1').checked) {
+		mt = parseInt(document.getElementById('m1').value,10);
+	} else if(document.getElementById('m2').checked) {
+		mt = parseInt(document.getElementById('m2').value,10);
+	}
+	var pp = parseInt((document.getElementById("range").value).toString().replace(/[^a-zA-Z 0-9]+/g,''),10);
+	var dpv = parseInt((document.getElementById("range3").value).toString().replace(/[^a-zA-Z 0-9]+/g,''),10);
+	var ir = parseFloat(document.getElementById("interest").value,10);
+	var princ = pp - dpv;
+	var intRate = (ir/100)/12;
+    var months = mt * 12;
+	//document.getElementById("range4").innerHTML = "$"+numberWithCommas((((pp-dpv)+((pp-dpv)*(ir/100)))/(mt*12)).toFixed(2));
+	document.getElementById("range4").innerHTML = "$"+numberWithCommas((((princ*intRate)/(1-Math.pow(1+intRate,(-1*months)))*100)/100).toFixed(2));
 }
 function verify() {
 	if(document.getElementById("interest").value.trim() != "") {
 		document.getElementById("calc").disabled = false;
+		show();
 	} else {
 		document.getElementById("calc").disabled = true;
+	}
+}
+function enterCheck() {
+	if(characterCode == 13) {
+		show();
 	}
 } 
 </script>
@@ -236,65 +277,49 @@ function verify() {
 
 <body>
 
-<div id="wrapper">
-	<h2>MORTGAGE CALCULATOR
-	<br/>____________________________</h2>
 	<div id="left">
 		<h2>PURCHASE PRICE</h2>
 		<div style="background: white;">
 			<!--<span id="range">$30,000</span>-->
-			<span>$</span><input width="60px" id="range" type="number" value="30000">
-		</div><br>
+			<input width="60px" id="range" type="text" value="$30,000" onkeyup="changedPP(this.value)">
+		</div>
 		<input type="range" min="30000" max="2000000" step="100" value="0" onchange="showPurchase(this.value)" />
 	</div>
 
 	<div id="left">
 		<h2>DOWNPAYMENT</h2>
 		<div>
-			<div style="background: white;width: 100px;float:left;">
-				<!--<span id="range2">15 %</span>-->
-				<input id="range2" type="number" value="15" onchange="changedDP(this.value)"><span>%</span>
+			<div style="background: white;width: 30%;float:left;">
+				<input id="range2" type="number" value="15" onkeyup="changedDP(this.value)"><span style="color:#282828;">%</span>
 			</div>
-			<div style="background: white;width: 129px;float:right;">
-				<!--<span id="range3">$4,500</span>-->
-				<span>$</span><input id="range3" type="number" value="4500" onchange="changedDPV(this.value)">
+			<div style="background: white;width: 60%;float:right;">
+				<input id="range3" type="text" value="$4,500" onkeyup="changedDPV(this.value)">
 			</div>
-		</div><br><br><br>
+		</div>
 		<input type="range" min="1" max="100" value="15" onchange="showDownPay(this.value)" />
 	</div>
 
 	<div id="left">
-		<h2>MORTGAGE TERM</h2>
-		<br/>
-		<form id="radios">
-			<input type="radio" class="styled" checked="checked" id="m1" name="mortgage" value="30"><label for="m1"></label><span style="color:white;">30 yr</span>
-			<input type="radio" class="styled" id="m2" name="mortgage" value="15"><label for="m2"></label><span style="color:white;">15 yr</span>
-			<br/><br/><br/>
-		</form>
+		<h2>MORTGAGE TERM</h2>	
+			<input type="radio" class="styled" checked="checked" id="m1" name="mortgage" value="30"><label id="label30" for="m1"></label><span style="color:white;margin-top:-5px;">30 yr</span>
+			<input type="radio" class="styled" id="m2" name="mortgage" value="15"><label id="label15" for="m2"></label><span style="color:white;line-height:20px;">15 yr</span>	
 	</div>
 
 	<div id="left">
 		<h2>INTEREST RATE</h2>
 		<div style="background: white;">
-			<input id="interest" type="number" onchange="verify()"><span style="color:black;">%</span>	
+			<input id="interest" type="text" value="4" onchange="verify()" onkeypress="enterCheck()" onfocusout="calculate()"><span style="color:#282828;">%</span>
 		</div>
+		<input type="range" min="1" max="50" value="4" onchange="changedIR(this.value)" />
 		<br/><br/><br/>
 	</div>		
-</div>
 
-<div id="wrapper">
-	<br/><br/>
-		<input id="calc" type="button" disabled="true" value="CALCULATE" onclick="calculate()" >
-	<br/><br/>
-</div>
-
-<div id="wrapper">
+	
 	<div id="bot">
-		<span style="color:white;">Estimated Monthly Payment:</span>
-		<br/>
-		<span id="range4" style="color:white;">$0</span>
+		<input id="calc" type="button" disabled="true" value="Estimated Monthly Payment:" onclick="show()" style="height:45px;margin-right:15px;">
+			
+		<span id="range4" style="color:white;">$121.74</span>
 	</div>
-</div>
 
 </body>
 </html>
