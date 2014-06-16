@@ -1,0 +1,11 @@
+element {
+    -webkit-overflow-scrolling: touch;
+}
+
+element > * {
+    -webkit-transform: translateZ(0px);
+}
+
+element > * {
+    -webkit-transform: translate3d(0,0,0);
+}
