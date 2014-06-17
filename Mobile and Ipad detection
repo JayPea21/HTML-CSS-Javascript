@@ -1,0 +1,51 @@
+	<script type="text/javascript">
+		
+		var isMobile = {
+		    Android: function() {
+		        return navigator.userAgent.match(/Android/i);
+		    },
+		    BlackBerry: function() {
+		        return navigator.userAgent.match(/BlackBerry/i);
+		    },
+		    iOS: function() {
+		        return navigator.userAgent.match(/iPhone|iPod/i);
+		    },
+		    iPad: function() {
+		        return navigator.userAgent.match(/iPad/i);
+		    },
+		    Opera: function() {
+		        return navigator.userAgent.match(/Opera Mini/i);
+		    },
+		    Windows: function() {
+		        return navigator.userAgent.match(/IEMobile/i);
+		    },
+		    any: function() {
+		        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+		    }
+		};
+
+		if( isMobile.iPad() ) {
+			alert('ipad yo');
+		}
+		
+		if(isPhoneDevice && !isMobile.iPad()) {  
+			$('.navbar-brand').css("background-image","url(img/logo-color@2x.png)");
+			$('.navbar-brand').css("background-size","200px 38px");
+			$('.container').css("background-color","rgba(255,255,255,0.9)");
+			$('.navbar-default .navbar-nav>li>a').css("color","#333333");
+		} else {
+			
+			$('#fullpage').fullpage({
+				slidesColor: ['#1bbc9b', '#7ea2ad', '#ffffff', 'whitesmoke', '#ccddff'],
+				anchors: ['start', 'resources', 'aboutme', 'testimonials', 'contact'],
+                navigation: false,
+                navigationPosition: 'right',
+                navigationTooltips: ['Hello!', 'Resources', 'About', 'Testimonials', 'Contact'],
+				menu: '#main-nav',
+                easing: 'easeInQuart',
+                verticalCentered: true,
+			});
+
+		}
+			
+  </script>
